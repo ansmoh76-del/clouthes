@@ -1,58 +1,550 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>عبد النور زقراوي | مصمم مواقع</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Cairo', sans-serif;
-            background: #111;
-            color: #fff;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-        .container {
-            padding: 20px;
-            max-width: 600px;
-        }
-        h1 {
-            font-size: 3rem;
-            color: #d4af37;
-            margin-bottom: 10px;
-        }
-        p {
-            font-size: 1.2rem;
-            color: #ccc;
-            margin-bottom: 30px;
-        }
-        .btn {
-            display: inline-block;
-            background: #d4af37;
-            color: #111;
-            padding: 15px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: 0.3s;
-        }
-        .btn:hover {
-            background: #e5c85b;
-            transform: translateY(-3px);
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أوس ستايل | Ouss Style</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root { --dark: #1a1a1a; --gold: #d4af37; --gold-light: #e5c85b; --white: #fff; --light: #f5f5f5; --gray: #777; --border: #e8e8e8; --shadow: 0 15px 40px rgba(0,0,0,.10); }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: "Cairo", "Tajawal", sans-serif; background: #fff; color: #1a1a1a; overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
+button, input, textarea { font-family: inherit; }
+button { cursor: pointer; }
+img { max-width: 100%; display: block; }
+.container { width: min(1180px, 92%); margin: auto; }
+
+/* Loader */
+.loader { position: fixed; inset: 0; background: var(--dark); display: flex; justify-content: center; align-items: center; z-index: 99999; transition: .5s ease; }
+.loader.hidden { opacity: 0; visibility: hidden; }
+.loader-logo { font-size: 32px; font-weight: 800; color: var(--gold); animation: pulse 1.2s infinite; }
+@keyframes pulse { 50% { opacity: .45; transform: scale(.96); } }
+
+/* Navbar */
+.navbar { position: fixed; top: 0; right: 0; left: 0; height: 78px; background: rgba(26,26,26,.96); backdrop-filter: blur(12px); display: flex; align-items: center; z-index: 5000; border-bottom: 1px solid rgba(212,175,55,.15); }
+.nav-inner { width: min(1180px, 92%); margin: auto; display: flex; align-items: center; justify-content: space-between; gap: 25px; }
+.logo { color: var(--white); font-size: 25px; font-weight: 800; white-space: nowrap; cursor: pointer; }
+.logo span { color: var(--gold); }
+.nav-links { display: flex; align-items: center; gap: 30px; list-style: none; }
+.nav-links a { color: #eee; font-size: 14px; transition: .3s; position: relative; }
+.nav-links a::after { content: ""; position: absolute; width: 0; height: 2px; right: 0; bottom: -8px; background: var(--gold); transition: .3s; }
+.nav-links a:hover { color: var(--gold); }
+.nav-links a:hover::after { width: 100%; }
+.nav-actions { display: flex; align-items: center; gap: 12px; }
+.shop-btn { background: var(--gold); color: var(--dark); border: 0; padding: 11px 19px; border-radius: 7px; font-weight: 800; transition: .3s; }
+.shop-btn:hover { background: var(--gold-light); transform: translateY(-2px); }
+.menu-btn { display: none; border: 0; background: transparent; color: white; font-size: 25px; }
+
+/* Hero */
+.hero { min-height: 100vh; padding-top: 78px; display: flex; align-items: center; position: relative; overflow: hidden; background: linear-gradient(90deg, rgba(0,0,0,.82), rgba(0,0,0,.35)), url("https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1800&q=85") center/cover; }
+.hero-content { color: white; max-width: 700px; }
+.hero-small { color: var(--gold); font-weight: 700; margin-bottom: 15px; letter-spacing: 1px; }
+.hero h1 { font-size: clamp(42px, 7vw, 78px); line-height: 1.12; margin-bottom: 20px; font-weight: 800; }
+.hero h1 span { color: var(--gold); }
+.hero p { color: #ddd; line-height: 2; font-size: 17px; max-width: 600px; margin-bottom: 30px; }
+.hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn { display: inline-flex; justify-content: center; align-items: center; min-height: 50px; padding: 0 25px; border-radius: 7px; font-weight: 700; transition: .3s; border: 1px solid transparent; }
+.btn-gold { background: var(--gold); color: var(--dark); }
+.btn-gold:hover { background: var(--gold-light); transform: translateY(-3px); }
+.btn-outline { border-color: rgba(255,255,255,.6); color: white; }
+.btn-outline:hover { background: white; color: var(--dark); }
+
+/* Sections */
+section { padding: 95px 0; }
+.section-heading { text-align: center; margin-bottom: 50px; }
+.section-heading span { color: var(--gold); font-weight: 800; font-size: 14px; }
+.section-heading h2 { font-size: 38px; margin: 7px 0; }
+.section-heading p { color: var(--gray); }
+
+/* Products */
+.products { background: var(--light); }
+.products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
+.product-card { background: white; border-radius: 14px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,.06); transition: .35s; }
+.product-card:hover { transform: translateY(-8px); box-shadow: var(--shadow); }
+.product-image { height: 320px; overflow: hidden; background: #eee; }
+.product-image img { width: 100%; height: 100%; object-fit: cover; transition: .5s; }
+.product-card:hover .product-image img { transform: scale(1.06); }
+.product-info { padding: 20px; }
+.product-info h3 { font-size: 18px; margin-bottom: 8px; }
+.product-info p { color: var(--gray); font-size: 13px; margin-bottom: 13px; }
+.product-bottom { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.price { color: var(--gold); font-weight: 800; font-size: 18px; }
+.add-cart { background: var(--dark); color: white; border: 0; padding: 10px 14px; border-radius: 7px; font-weight: 700; transition: .3s; }
+.add-cart:hover { background: var(--gold); color: var(--dark); }
+
+/* About */
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 55px; align-items: center; }
+.about-image img { width: 100%; height: 480px; object-fit: cover; border-radius: 16px; }
+.about-content span { color: var(--gold); font-weight: 800; }
+.about-content h2 { font-size: 40px; margin: 10px 0 20px; }
+.about-content p { color: #666; line-height: 2.1; margin-bottom: 18px; }
+
+/* Why */
+.why { background: var(--dark); color: white; }
+.why .section-heading p { color: #aaa; }
+.why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.why-card { padding: 30px 20px; text-align: center; border: 1px solid rgba(255,255,255,.08); border-radius: 13px; background: rgba(255,255,255,.03); transition: .3s; }
+.why-card:hover { transform: translateY(-5px); border-color: rgba(212,175,55,.45); }
+.why-icon { font-size: 35px; margin-bottom: 15px; }
+.why-card h3 { color: var(--gold); margin-bottom: 8px; }
+.why-card p { color: #aaa; font-size: 13px; line-height: 1.9; }
+
+/* Reviews */
+.reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.review { background: var(--light); border-radius: 13px; padding: 28px; border-right: 3px solid var(--gold); }
+.stars { color: var(--gold); margin-bottom: 12px; }
+.review p { color: #666; line-height: 1.9; font-size: 14px; }
+.review strong { display: block; margin-top: 15px; }
+
+/* Contact */
+.contact { background: var(--light); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+.contact-info { background: var(--dark); color: white; border-radius: 14px; padding: 35px; }
+.contact-info h3 { color: var(--gold); font-size: 25px; margin-bottom: 25px; }
+.contact-item { margin-bottom: 20px; }
+.contact-item strong { display: block; margin-bottom: 5px; }
+.contact-item span { color: #bbb; }
+.map { border-radius: 14px; overflow: hidden; min-height: 400px; }
+.map iframe { width: 100%; height: 100%; min-height: 400px; border: 0; }
+
+/* CTA */
+.cta { background: linear-gradient(rgba(26,26,26,.92), rgba(26,26,26,.92)), url("https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1800&q=80") center/cover; text-align: center; color: white; }
+.cta h2 { font-size: 42px; margin-bottom: 15px; }
+.cta p { color: #ccc; margin-bottom: 25px; }
+
+/* Footer */
+footer { background: #111; color: #aaa; text-align: center; padding: 30px 15px; }
+footer strong { color: var(--gold); }
+
+/* Toast */
+.toast { position: fixed; bottom: 25px; left: 25px; background: var(--dark); color: white; border: 1px solid rgba(212,175,55,.5); padding: 14px 20px; border-radius: 8px; z-index: 10000; transform: translateY(120px); opacity: 0; transition: .35s ease; box-shadow: var(--shadow); }
+.toast.show { transform: translateY(0); opacity: 1; }
+
+/* Cart */
+.cart-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.65); backdrop-filter: blur(4px); z-index: 9000; opacity: 0; visibility: hidden; transition: .35s ease; }
+.cart-overlay.active { opacity: 1; visibility: visible; }
+.cart-sidebar { position: fixed; top: 0; right: 0; width: min(460px, 100%); height: 100vh; background: white; z-index: 10000; transform: translateX(105%); transition: .4s cubic-bezier(.4,0,.2,1); display: flex; flex-direction: column; box-shadow: -15px 0 45px rgba(0,0,0,.2); }
+.cart-sidebar.active { transform: translateX(0); }
+.cart-header { background: var(--dark); color: white; padding: 20px; display: flex; justify-content: space-between; align-items: center; flex-shrink: 0; }
+.cart-header h2 { font-size: 21px; }
+.close-cart { width: 38px; height: 38px; border: 1px solid rgba(255,255,255,.2); border-radius: 50%; background: transparent; color: white; font-size: 22px; transition: .3s; }
+.close-cart:hover { background: var(--gold); color: var(--dark); }
+.cart-items { flex: 1; overflow-y: auto; padding: 18px; }
+.cart-empty { min-height: 300px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #999; }
+.cart-empty-icon { font-size: 55px; margin-bottom: 15px; opacity: .4; }
+.cart-item { display: grid; grid-template-columns: 75px 1fr auto; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--border); animation: itemIn .3s ease; }
+@keyframes itemIn { from { opacity: 0; transform: translateX(15px); } to { opacity: 1; transform: translateX(0); } }
+.cart-item-image { width: 75px; height: 90px; border-radius: 8px; overflow: hidden; background: #eee; }
+.cart-item-image img { width: 100%; height: 100%; object-fit: cover; }
+.cart-item-info h4 { font-size: 14px; margin-bottom: 5px; }
+.cart-item-price { color: var(--gold); font-weight: 800; font-size: 14px; margin-bottom: 9px; }
+.quantity-controls { display: flex; align-items: center; width: fit-content; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+.quantity-controls button { width: 28px; height: 28px; border: 0; background: #f4f4f4; color: var(--dark); font-size: 16px; transition: .2s; }
+.quantity-controls button:hover { background: var(--gold); }
+.quantity-controls span { min-width: 30px; text-align: center; font-size: 13px; font-weight: 700; }
+.remove-item { align-self: start; border: 0; background: transparent; color: #aaa; font-size: 17px; transition: .2s; }
+.remove-item:hover { color: #d33; }
+.cart-footer { border-top: 1px solid var(--border); padding: 18px; background: white; flex-shrink: 0; }
+.cart-total-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; font-size: 18px; font-weight: 800; }
+.cart-total-price { color: var(--gold); }
+.cart-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.cart-btn { border: 0; min-height: 48px; border-radius: 7px; font-weight: 800; transition: .3s; }
+.continue-shopping { background: #eee; color: var(--dark); }
+.continue-shopping:hover { background: #ddd; }
+.checkout-btn { background: var(--gold); color: var(--dark); }
+.checkout-btn:hover { background: var(--gold-light); }
+.checkout-btn:disabled { opacity: .5; cursor: not-allowed; }
+
+/* Reveal */
+.reveal { opacity: 0; transform: translateY(25px); transition: .7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* Responsive */
+@media (max-width: 900px) {
+    .products-grid { grid-template-columns: repeat(2, 1fr); }
+    .why-grid { grid-template-columns: repeat(2, 1fr); }
+    .about-grid, .contact-grid { grid-template-columns: 1fr; }
+    .reviews-grid { grid-template-columns: 1fr; }
+    .about-image { order: 2; }
+    .about-content { order: 1; }
+}
+@media (max-width: 760px) {
+    .nav-links { position: fixed; top: 78px; right: 0; width: 100%; background: var(--dark); flex-direction: column; align-items: stretch; gap: 0; padding: 10px 20px 20px; transform: translateY(-130%); opacity: 0; pointer-events: none; transition: .35s; border-bottom: 1px solid rgba(212,175,55,.2); }
+    .nav-links.active { transform: translateY(0); opacity: 1; pointer-events: auto; }
+    .nav-links li { padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,.05); }
+    .menu-btn { display: block; }
+    .nav-actions .shop-btn { display: none; }
+    .hero h1 { font-size: 45px; }
+    .hero p { font-size: 15px; }
+    section { padding: 70px 0; }
+    .section-heading h2 { font-size: 31px; }
+    .products-grid { grid-template-columns: 1fr; }
+    .product-image { height: 380px; }
+    .why-grid { grid-template-columns: 1fr; }
+    .about-image img { height: 350px; }
+    .cta h2 { font-size: 31px; }
+}
+@media (max-width: 480px) {
+    .nav-inner { width: 94%; }
+    .logo { font-size: 21px; }
+    .hero { min-height: 90vh; }
+    .hero h1 { font-size: 38px; }
+    .hero-buttons { flex-direction: column; align-items: stretch; }
+    .btn { width: 100%; }
+    .cart-item { grid-template-columns: 65px 1fr auto; gap: 9px; }
+    .cart-item-image { width: 65px; height: 80px; }
+    .cart-buttons { grid-template-columns: 1fr; }
+    .toast { left: 12px; right: 12px; bottom: 15px; text-align: center; }
+}
+</style>
 </head>
 <body>
-    <div class="container">
-        <h1>عبد النور</h1>
-        <p>مصمم مواقع إلكترونية</p>
-        <a href="https://www.instagram.com/abdennour.dev.11" class="btn" target="_blank">تواصل معي على إنستغرام</a>
+
+<div class="loader" id="loader"><div class="loader-logo">OUSS STYLE</div></div>
+
+<header class="navbar">
+    <div class="nav-inner">
+        <a href="#home" class="logo" id="secretLogo">أوس <span>ستايل</span></a>
+        <nav>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#products">المنتجات</a></li>
+                <li><a href="#about">عنا</a></li>
+                <li><a href="#contact">اتصل بنا</a></li>
+            </ul>
+        </nav>
+        <div class="nav-actions">
+            <button class="cart-nav" id="openCart" aria-label="فتح السلة">🛒<span class="cart-count" id="cartCount">0</span></button>
+            <a href="#products" class="shop-btn">تسوق الآن</a>
+            <button class="menu-btn" id="menuBtn" aria-label="القائمة">☰</button>
+        </div>
     </div>
+</header>
+
+<main>
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content reveal">
+                <div class="hero-small">OUSS STYLE • TLEMCEN</div>
+                <h1>أناقتك تبدأ<br>من <span>اختيارك.</span></h1>
+                <p>اكتشف تشكيلتنا المختارة من الملابس الكلاسيكية والأوفرسايز، بتصاميم عصرية تناسب ذوقك وإطلالتك.</p>
+                <div class="hero-buttons">
+                    <a href="#products" class="btn btn-gold">تسوق الآن</a>
+                    <a href="#about" class="btn btn-outline">اكتشف أوس ستايل</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-heading reveal">
+                <span>مجموعتنا</span>
+                <h2>منتجات مختارة بعناية</h2>
+                <p>اختيارات عصرية تناسب مختلف الأذواق</p>
+            </div>
+            <div class="products-grid" id="productsGrid"></div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image reveal">
+                    <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=900&q=80" alt="أوس ستايل">
+                </div>
+                <div class="about-content reveal">
+                    <span>من نحن</span>
+                    <h2>أكثر من مجرد ملابس.</h2>
+                    <p>في أوس ستايل نؤمن أن الملابس ليست مجرد قطع نرتديها، بل طريقة نعبر بها عن شخصيتنا وذوقنا.</p>
+                    <p>لذلك نختار منتجاتنا بعناية، مع التركيز على التصاميم الكلاسيكية والأوفرسايز التي تجمع بين الراحة والأناقة.</p>
+                    <a href="#products" class="btn btn-gold">اكتشف المنتجات</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why">
+        <div class="container">
+            <div class="section-heading reveal">
+                <span>لماذا عوس ستايل؟</span>
+                <h2>اختيارك له سبب</h2>
+                <p>نهتم بالتفاصيل الصغيرة التي تصنع الفرق.</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-card reveal"><div class="why-icon">✦</div><h3>ستايل عصري</h3><p>تصاميم مختارة لتناسب الموضة الحالية.</p></div>
+                <div class="why-card reveal"><div class="why-icon">✓</div><h3>جودة مختارة</h3><p>نهتم بالخامات والتفاصيل قبل اختيار المنتجات.</p></div>
+                <div class="why-card reveal"><div class="why-icon">♡</div><h3>أسعار مناسبة</h3><p>نحاول تقديم قيمة جيدة مقابل السعر.</p></div>
+                <div class="why-card reveal"><div class="why-icon">⚡</div><h3>خدمة سريعة</h3><p>نحرص على التعامل مع طلباتكم بسرعة ووضوح.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="section-heading reveal">
+                <span>آراء العملاء</span>
+                <h2>ماذا يقول عملاؤنا؟</h2>
+            </div>
+            <div class="reviews-grid">
+                <div class="review reveal"><div class="stars">★★★★★</div><p>نوعية الملابس جيدة و أصلية.</p><strong>— زبون أوس ستايل</strong></div>
+                <div class="review reveal"><div class="stars">★★★★★</div><p>تنوع الأوفرسايز رائع، وأنا أعلم أن هذا المتجر له مستقبل زاهر إن شاء الله.</p><strong>— عميلة أوس ستايل</strong></div>
+                <div class="review reveal"><div class="stars">★★★★★</div><p>نعم الأخلاق والمعاملة، بالتوفيق.</p><strong>— زبون أوس ستايل</strong></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-heading reveal">
+                <span>تواصل معنا</span>
+                <h2>نحن هنا من أجلك</h2>
+                <p>يمكنك زيارتنا أو التواصل معنا مباشرة.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info reveal">
+                    <h3>معلومات المتجر</h3>
+                    <div class="contact-item"><strong>📍 العنوان</strong><span>تلمسان، الجزائر</span></div>
+                    <div class="contact-item"><strong>📞 الهاتف</strong><span>+213 6 61 24 71 86</span></div>
+                    <div class="contact-item"><strong>🕐 أوقات العمل</strong><span>يوميًا من 09:00 إلى 20:00</span></div>
+                </div>
+                <div class="map reveal">
+                    <iframe src="https://www.google.com/maps?q=Tlemcen,Algeria&output=embed" loading="lazy" title="موقع عوس ستايل في تلمسان"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container reveal">
+            <h2>جاهز لتجديد ستايلك؟</h2>
+            <p>اختر القطع التي تعجبك وأضفها إلى سلتك الآن.</p>
+            <a href="#products" class="btn btn-gold">ابدأ التسوق</a>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>© 2026 <strong>OUSS STYLE</strong> — جميع الحقوق محفوظة.</p>
+</footer>
+
+<div class="toast" id="toast">تمت إضافة المنتج إلى السلة</div>
+
+<!-- PANELS -->
+<div class="options-overlay" id="optionsOverlay"></div>
+<aside class="options-panel" id="productOptionsPanel"><div class="options-header"><h2 id="optionsProductTitle">تفاصيل المنتج</h2><button class="options-close" id="closeOptions">×</button></div><div class="options-body" id="productOptionsBody"></div></aside>
+<aside class="options-panel" id="customerInfoPanel"><div class="options-header"><h2>ملء معلومات الطلب</h2><button class="options-close" id="closeCustomerInfo">×</button></div><div class="options-body"><p class="option-hint">أدخل معلوماتك لإكمال تجهيز الطلب.</p><form id="customerInfoForm"><label for="customerFirstName">الاسم *</label><input id="customerFirstName" name="firstName" required maxlength="60"><label for="customerLastName">اللقب *</label><input id="customerLastName" name="lastName" required maxlength="60"><label for="customerPhone">رقم الهاتف *</label><input id="customerPhone" name="phone" type="tel" required inputmode="tel" pattern="[0-9+\-() ]{8,20}" maxlength="20"><label for="customerWilaya">الولاية *</label><input id="customerWilaya" name="wilaya" required maxlength="60"><label for="customerCommune">البلدية *</label><input id="customerCommune" name="commune" required maxlength="80"><label for="customerAddress">العنوان *</label><input id="customerAddress" name="address" required maxlength="250"><label for="deliveryType">طريقة الاستلام</label><select id="deliveryType" name="deliveryType"><option value="التوصيل إلى المنزل">التوصيل إلى المنزل</option><option value="الاستلام من مكتب التوصيل">الاستلام من مكتب التوصيل</option></select><div class="manager-card" style="margin-top:18px"><strong>ملخص الطلب</strong><p id="customerOrderSummary" style="margin-top:8px;line-height:1.8"></p></div><button class="options-add" type="submit">تأكيد معلومات الطلب</button></form></div></aside>
+<aside class="options-panel" id="productManagerPanel"><div class="options-header"><h2>إدارة المقاسات والألوان</h2><button class="options-close" id="closeProductManager">×</button></div><div class="options-body" id="productManagerBody"></div></aside>
+<aside class="options-panel" id="bookingListPanel"><div class="options-header"><h2>قائمة الحجوزات</h2><button class="options-close" id="closeBookings">×</button></div><div class="options-body" id="bookingListBody"></div></aside>
+
+<!-- CART -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-sidebar" id="cartSidebar"><div class="cart-header"><h2>🛒 سلة التسوق</h2><button class="close-cart" id="closeCart">×</button></div><div class="cart-items" id="cartItems"></div><div class="cart-footer"><div class="cart-total-row"><span>المجموع:</span><span class="cart-total-price" id="cartTotal">0 دج</span></div><div class="cart-buttons"><button class="cart-btn continue-shopping" id="continueShopping">متابعة التسوق</button><button class="cart-btn checkout-btn" id="checkoutBtn" disabled>إتمام الطلب</button></div></div></aside>
+
+<script>
+const cartKey = "oussStyleCart";
+const cartSidebar = document.getElementById("cartSidebar");
+const cartOverlay = document.getElementById("cartOverlay");
+const openCartBtn = document.getElementById("openCart");
+const closeCartBtn = document.getElementById("closeCart");
+const continueShoppingBtn = document.getElementById("continueShopping");
+const cartItemsContainer = document.getElementById("cartItems");
+const cartCountElement = document.getElementById("cartCount");
+const cartTotalElement = document.getElementById("cartTotal");
+const checkoutBtn = document.getElementById("checkoutBtn");
+const toast = document.getElementById("toast");
+const productsGrid = document.getElementById("productsGrid");
+
+const staticProducts = [
+    { id: "classic-pants", name: "سروال كلاسيك", description: "تصميم أنيق ومريح.", price: 3500, image: "https://images.unsplash.com/photo-1506629905607-d9a8c7a4a4c1?auto=format&fit=crop&w=800&q=80", sizes: ["S","M","L","XL","XXL"], colors: ["أسود","أزرق"] },
+    { id: "oversize-shirt", name: "قميص أوفرسايز", description: "ستايل عصري بقصة واسعة.", price: 2800, image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80", sizes: ["S","M","L","XL","XXL"], colors: ["أبيض","أسود"] },
+    { id: "winter-jacket", name: "جاكيت شتوي", description: "دفء وأناقة في قطعة واحدة.", price: 7500, image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=800&q=80", sizes: ["S","M","L","XL","XXL"], colors: ["أسود","بني"] },
+    { id: "classic-shirt", name: "قميص كلاسيك", description: "تصميم راقٍ.", price: 3200, image: "https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&fit=crop&w=800&q=80", sizes: ["S","M","L","XL","XXL"], colors: ["أبيض","أزرق"] },
+    { id: "sport-shoes", name: "حذاء رياضي", description: "راحة وأناقة.", price: 6500, image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80", sizes: ["38","39","40","41","42","43","44"], colors: ["أحمر","أسود"] },
+    { id: "modern-cap", name: "قبعة عصرية", description: "لمسة بسيطة.", price: 1800, image: "https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&w=800&q=80", sizes: [], colors: ["أصفر","أسود"] }
+];
+
+let cart = JSON.parse(localStorage.getItem(cartKey)) || [];
+let productSettings = {};
+try { productSettings = JSON.parse(localStorage.getItem("oussStyleProductOptions") || "{}") || {}; } catch (_) { productSettings = {}; }
+let customProducts = [];
+try { customProducts = JSON.parse(localStorage.getItem("oussStyleCustomProducts") || "[]") || []; } catch (_) { customProducts = []; }
+
+function saveCart() { localStorage.setItem(cartKey, JSON.stringify(cart)); }
+function saveProductSettings() { localStorage.setItem("oussStyleProductOptions", JSON.stringify(productSettings)); }
+function saveCustomProducts() { localStorage.setItem("oussStyleCustomProducts", JSON.stringify(customProducts)); }
+function formatPrice(price) { return Number(price).toLocaleString("fr-DZ") + " دج"; }
+function escapeHTML(value) { return String(value).replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch])); }
+function getTotalItems() { return cart.reduce((total, item) => total + item.quantity, 0); }
+function getTotalPrice() { return cart.reduce((total, item) => total + (item.price * item.quantity), 0); }
+function getProductSettings(product) { const saved = productSettings[product.id] || {}; return { ...product, sizes: Array.isArray(saved.sizes) ? saved.sizes : (product.sizes || []), colors: Array.isArray(saved.colors) && saved.colors.length ? saved.colors : (product.colors || []) }; }
+function showToast(message) { toast.textContent = message; toast.classList.add("show"); clearTimeout(window.toastTimer); window.toastTimer = setTimeout(() => { toast.classList.remove("show"); }, 2500); }
+
+function renderProducts() {
+    productsGrid.innerHTML = "";
+    const allProducts = [...staticProducts, ...customProducts];
+    allProducts.forEach(product => {
+        const card = document.createElement("article");
+        card.className = "product-card reveal visible";
+        card.innerHTML = `<div class="product-image"><img src="${escapeHTML(product.image)}" alt="${escapeHTML(product.name)}" loading="lazy"></div><div class="product-info"><h3>${escapeHTML(product.name)}</h3><p>${escapeHTML(product.description || "")}</p><div class="product-bottom"><span class="price">${formatPrice(product.price)}</span><button class="add-cart" data-id="${escapeHTML(product.id)}">أضف للسلة</button></div></div>`;
+        productsGrid.appendChild(card);
+        card.querySelector(".add-cart").addEventListener("click", () => openOptions(product));
+    });
+}
+
+function updateCartCount() { const totalItems = getTotalItems(); cartCountElement.textContent = totalItems; cartCountElement.style.display = totalItems === 0 ? "none" : "flex"; }
+
+function addToCart(product) {
+    const lineId = `${product.id}__${product.size || "no-size"}__${product.color || "no-color"}`;
+    const existingProduct = cart.find(item => (item.lineId || `${item.id}__no-size__no-color`) === lineId);
+    if (existingProduct) { existingProduct.quantity += product.quantity || 1; } else { cart.push({ id: product.id, lineId, name: product.name, price: product.price, image: product.image, size: product.size || "", color: product.color || "", quantity: product.quantity || 1 }); }
+    saveCart(); renderCart(); updateCartCount(); showToast("تمت إضافة المنتج إلى السلة");
+}
+
+function changeQuantity(productId, change) { const product = cart.find(item => (item.lineId || item.id) === productId); if (!product) return; product.quantity += change; if (product.quantity <= 0) { cart = cart.filter(item => (item.lineId || item.id) !== productId); } saveCart(); renderCart(); updateCartCount(); }
+function removeFromCart(productId) { cart = cart.filter(item => (item.lineId || item.id) !== productId); saveCart(); renderCart(); updateCartCount(); }
+
+function renderCart() {
+    if (cart.length === 0) { cartItemsContainer.innerHTML = `<div class="cart-empty"><div class="cart-empty-icon">🛒</div><h3>السلة فارغة</h3><p>أضف بعض المنتجات لتظهر هنا.</p></div>`; }
+    else { cartItemsContainer.innerHTML = cart.map(item => { const itemTotal = item.price * item.quantity; return `<div class="cart-item"><div class="cart-item-image"><img src="${item.image}" alt="${item.name}"></div><div class="cart-item-info"><h4>${item.name}</h4><div class="cart-item-options">${item.size ? `المقاس: ${item.size}<br>` : ""}${item.color ? `اللون: ${item.color}` : ""}</div><div class="cart-item-price">${formatPrice(itemTotal)}</div><div class="quantity-controls"><button class="decrease-quantity" data-id="${item.lineId || item.id}">−</button><span>${item.quantity}</span><button class="increase-quantity" data-id="${item.lineId || item.id}">+</button></div></div><button class="remove-item" data-id="${item.lineId || item.id}">🗑</button></div>`; }).join(""); }
+    cartTotalElement.textContent = formatPrice(getTotalPrice()); checkoutBtn.disabled = cart.length === 0;
+}
+
+cartItemsContainer.addEventListener("click", function(event) {
+    const increaseButton = event.target.closest(".increase-quantity"); const decreaseButton = event.target.closest(".decrease-quantity"); const removeButton = event.target.closest(".remove-item");
+    if (increaseButton) changeQuantity(increaseButton.dataset.id, 1);
+    if (decreaseButton) changeQuantity(decreaseButton.dataset.id, -1);
+    if (removeButton) removeFromCart(removeButton.dataset.id);
+});
+
+const optionsOverlay = document.getElementById("optionsOverlay");
+const productOptionsPanel = document.getElementById("productOptionsPanel");
+const productOptionsBody = document.getElementById("productOptionsBody");
+const optionsProductTitle = document.getElementById("optionsProductTitle");
+const productManagerPanel = document.getElementById("productManagerPanel");
+const customerInfoPanel = document.getElementById("customerInfoPanel");
+const customerInfoForm = document.getElementById("customerInfoForm");
+const bookingListPanel = document.getElementById("bookingListPanel");
+const bookingListBody = document.getElementById("bookingListBody");
+const productManagerBody = document.getElementById("productManagerBody");
+let activeProduct = null; let selectedSize = ""; let selectedColor = "";
+
+function closeOptionPanels() { productOptionsPanel.classList.remove("active"); productManagerPanel.classList.remove("active"); customerInfoPanel.classList.remove("active"); bookingListPanel.classList.remove("active"); optionsOverlay.classList.remove("active"); document.body.style.overflow = ""; }
+
+function openOptions(product) {
+    activeProduct = getProductSettings(product); selectedSize = ""; selectedColor = "";
+    optionsProductTitle.textContent = activeProduct.name;
+    const sizeMarkup = activeProduct.sizes.length ? `<label>المقاس</label><div class="option-chips" id="sizeChoices">${activeProduct.sizes.map(size => `<button type="button" class="option-chip" data-size="${size}">${size}</button>`).join("")}</div>` : `<p class="option-hint">هذا المنتج لا يحتاج إلى اختيار مقاس.</p>`;
+    const colorMarkup = activeProduct.colors.length ? `<label>اللون</label><div class="option-chips" id="colorChoices">${activeProduct.colors.map(color => `<button type="button" class="option-chip" data-color="${escapeHTML(color)}">${escapeHTML(color)}</button>`).join("")}</div>` : `<p class="option-hint">لم تُحدَّد ألوان لهذا المنتج بعد.</p>`;
+    productOptionsBody.innerHTML = `<img src="${activeProduct.image}" alt="${escapeHTML(activeProduct.name)}" style="width:100%;height:210px;object-fit:cover;border-radius:10px"><h3 style="margin-top:14px">${escapeHTML(activeProduct.name)}</h3><p style="color:var(--gold);font-weight:800;margin-top:6px">${formatPrice(activeProduct.price)}</p>${sizeMarkup}${colorMarkup}<label for="productQuantity">الكمية</label><input id="productQuantity" type="number" min="1" step="1" value="1"><button class="options-add" id="confirmAddProduct">إضافة إلى السلة</button>`;
+    productOptionsBody.querySelectorAll("[data-size]").forEach(btn => btn.addEventListener("click", () => { selectedSize = btn.dataset.size; productOptionsBody.querySelectorAll("[data-size]").forEach(x => x.classList.toggle("selected", x === btn)); }));
+    productOptionsBody.querySelectorAll("[data-color]").forEach(btn => btn.addEventListener("click", () => { selectedColor = btn.dataset.color; productOptionsBody.querySelectorAll("[data-color]").forEach(x => x.classList.toggle("selected", x === btn)); }));
+    document.getElementById("confirmAddProduct").addEventListener("click", () => {
+        const quantity = Math.floor(Number(document.getElementById("productQuantity").value));
+        if (!Number.isFinite(quantity) || quantity < 1) { showToast("أدخل كمية صحيحة"); return; }
+        if (activeProduct.sizes.length && !selectedSize) { showToast("اختر المقاس أولاً"); return; }
+        if (activeProduct.colors.length && !selectedColor) { showToast("اختر اللون أولاً"); return; }
+        addToCart({ ...activeProduct, size: selectedSize, color: selectedColor, quantity }); closeOptionPanels();
+    });
+    optionsOverlay.classList.add("active"); productOptionsPanel.classList.add("active"); document.body.style.overflow = "hidden";
+}
+
+function openProductManager() {
+    const allProducts = [...staticProducts, ...customProducts];
+    productManagerBody.innerHTML = `<form id="addProductForm" class="manager-add-form"><h3>إضافة منتج جديد</h3><label for="newProductName">اسم المنتج</label><input id="newProductName" required maxlength="80"><label for="newProductPrice">السعر</label><input id="newProductPrice" type="number" min="1" step="1" required><label for="newProductImage">رابط الصورة</label><input id="newProductImage" type="url" required><label for="newProductDescription">الوصف</label><input id="newProductDescription" maxlength="180"><label for="newProductSizes">المقاسات (فاصلة)</label><input id="newProductSizes"><label for="newProductColors">الألوان (فاصلة)</label><input id="newProductColors" required><button type="submit" class="manager-save">حفظ وإضافة المنتج</button></form><h3 style="margin:20px 0 10px">تخصيص المقاسات والألوان</h3>` + allProducts.map(product => { const item = getProductSettings(product); return `<section class="manager-card" data-product-id="${escapeHTML(product.id)}"><h3>${escapeHTML(product.name)}</h3><small>${formatPrice(product.price)}</small><label>المقاسات (فاصلة)</label><input class="manager-sizes" value="${escapeHTML(item.sizes.join(", "))}"><label>الألوان (فاصلة)</label><input class="manager-colors" value="${escapeHTML(item.colors.join(", "))}"></section>`; }).join("") + `<button type="button" class="manager-save" id="saveProductSettings">حفظ خيارات المنتجات</button>`;
+    
+    document.getElementById("addProductForm").addEventListener("submit", event => {
+        event.preventDefault();
+        const name = document.getElementById("newProductName").value.trim(); const price = Number(document.getElementById("newProductPrice").value); const image = document.getElementById("newProductImage").value.trim(); const description = document.getElementById("newProductDescription").value.trim(); const sizes = document.getElementById("newProductSizes").value.split(",").map(x => x.trim()).filter(Boolean); const colors = document.getElementById("newProductColors").value.split(",").map(x => x.trim()).filter(Boolean);
+        if (!name || !Number.isFinite(price) || price <= 0 || !image || !colors.length) { showToast("أكمل البيانات"); return; }
+        const product = { id: "custom-" + Date.now(), name, description, price, image, sizes, colors };
+        customProducts.push(product); saveCustomProducts(); renderProducts(); showToast("تمت إضافة المنتج"); openProductManager();
+    });
+
+    document.getElementById("saveProductSettings").addEventListener("click", () => {
+        const updated = {}; let valid = true;
+        productManagerBody.querySelectorAll(".manager-card").forEach(card => {
+            const sizes = card.querySelector(".manager-sizes").value.split(",").map(x => x.trim()).filter(Boolean); const colors = card.querySelector(".manager-colors").value.split(",").map(x => x.trim()).filter(Boolean);
+            if (new Set(sizes).size !== sizes.length || new Set(colors).size !== colors.length) { valid = false; }
+            updated[card.dataset.productId] = { sizes, colors };
+        });
+        if (!valid) { showToast("احذف المكرر"); return; }
+        productSettings = updated; saveProductSettings(); showToast("تم حفظ الخيارات"); closeOptionPanels();
+    });
+    optionsOverlay.classList.add("active"); productManagerPanel.classList.add("active"); document.body.style.overflow = "hidden";
+}
+
+document.getElementById("closeOptions").addEventListener("click", closeOptionPanels);
+document.getElementById("closeProductManager").addEventListener("click", closeOptionPanels);
+document.getElementById("closeCustomerInfo").addEventListener("click", closeOptionPanels);
+document.getElementById("closeBookings").addEventListener("click", closeOptionPanels);
+optionsOverlay.addEventListener("click", closeOptionPanels);
+
+function openCart() { renderCart(); cartSidebar.classList.add("active"); cartOverlay.classList.add("active"); document.body.style.overflow = "hidden"; }
+function closeCart() { cartSidebar.classList.remove("active"); cartOverlay.classList.remove("active"); document.body.style.overflow = ""; }
+openCartBtn.addEventListener("click", openCart); closeCartBtn.addEventListener("click", closeCart); continueShoppingBtn.addEventListener("click", closeCart); cartOverlay.addEventListener("click", closeCart);
+document.addEventListener("keydown", function(event) { if (event.key === "Escape") { closeCart(); closeOptionPanels(); } });
+
+checkoutBtn.addEventListener("click", function() {
+    if (cart.length === 0) return;
+    closeCart();
+    const itemsText = cart.map((item, index) => { const options = [item.size ? `المقاس: ${item.size}` : "", item.color ? `اللون: ${item.color}` : ""].filter(Boolean).join("، "); return `${index + 1}. ${item.name}${options ? ` (${options})` : ""} × ${item.quantity} = ${formatPrice(item.price * item.quantity)}`; }).join("<br>");
+    document.getElementById("customerOrderSummary").innerHTML = `${itemsText}<hr style="margin:8px 0;border:0;border-top:1px solid #ddd"><strong>المجموع: ${formatPrice(getTotalPrice())}</strong>`;
+    optionsOverlay.classList.add("active"); customerInfoPanel.classList.add("active"); document.body.style.overflow = "hidden";
+});
+
+customerInfoForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+    if (cart.length === 0) { showToast("السلة فارغة"); closeOptionPanels(); return; }
+    const formData = new FormData(customerInfoForm);
+    const order = { orderNumber: "OS-" + Date.now().toString().slice(-8), customer: { name: `${String(formData.get("firstName")).trim()} ${String(formData.get("lastName")).trim()}`, phone: String(formData.get("phone")).trim(), wilaya: String(formData.get("wilaya")).trim(), commune: String(formData.get("commune")).trim(), address: String(formData.get("address")).trim(), deliveryType: String(formData.get("deliveryType")) }, items: cart.map(item => ({ name: item.name, price: item.price, quantity: item.quantity, size: item.size || "", color: item.color || "" })), total: getTotalPrice(), createdAt: new Date().toISOString() };
+    let orders = []; try { orders = JSON.parse(localStorage.getItem("oussStyleOrders") || "[]"); if (!Array.isArray(orders)) orders = []; orders.push(order); localStorage.setItem("oussStyleOrders", JSON.stringify(orders)); } catch (error) {}
+    const phoneNumber = "213661247186";
+    let message = `🛍️ *طلب جديد - أوس ستايل*\n\n📋 رقم الطلب: ${order.orderNumber}\n👤 الاسم: ${order.customer.name}\n📞 الهاتف: ${order.customer.phone}\n📍 الولاية: ${order.customer.wilaya}\n🏘️ البلدية: ${order.customer.commune}\n🏠 العنوان: ${order.customer.address}\n🚚 الاستلام: ${order.customer.deliveryType}\n\n📦 *المنتجات:*\n`;
+    order.items.forEach(it => { message += `• ${it.name} (${it.size} / ${it.color}) × ${it.quantity} = ${formatPrice(it.price * it.quantity)}\n`; });
+    message += `\n💰 *الإجمالي: ${formatPrice(order.total)}*`;
+    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
+    cart = []; saveCart(); renderCart(); updateCartCount(); customerInfoForm.reset(); closeOptionPanels(); showToast("تم إرسال الطلب");
+});
+
+function renderBookings() {
+    let orders = []; try { orders = JSON.parse(localStorage.getItem("oussStyleOrders") || "[]"); } catch (_) { orders = []; }
+    if (!Array.isArray(orders) || !orders.length) { bookingListBody.innerHTML = '<p class="option-hint">لا توجد حجوزات.</p>'; return; }
+    bookingListBody.innerHTML = orders.slice().reverse().map(order => { const customer = order.customer || {}; const items = (order.items || []).map(item => `<li>${item.name} — ${item.quantity} × ${formatPrice(item.price)}${item.size ? ` | المقاس: ${item.size}` : ""}${item.color ? ` | اللون: ${item.color}` : ""}</li>`).join(""); return `<div class="manager-card" style="margin-bottom:12px"><strong>الحجز ${order.orderNumber || ""}</strong><p>الاسم: ${customer.name || ""}<br>الهاتف: ${customer.phone || ""}<br>الولاية: ${customer.wilaya || ""}<br>البلدية: ${customer.commune || ""}<br>العنوان: ${customer.address || ""}<br>طريقة الاستلام: ${customer.deliveryType || ""}<br>التاريخ: ${order.createdAt ? new Date(order.createdAt).toLocaleString("ar-DZ") : ""}</p><ul>${items}</ul><strong>المجموع: ${formatPrice(order.total || 0)}</strong></div>`; }).join("");
+}
+
+let logoClicks = 0; let logoTimer = null;
+document.getElementById("secretLogo").addEventListener("click", function(e) {
+    e.preventDefault(); logoClicks++; clearTimeout(logoTimer); logoTimer = setTimeout(() => { logoClicks = 0; }, 1500);
+    if (logoClicks >= 5) {
+        logoClicks = 0;
+        if (!document.getElementById("adminContainer")) {
+            const adminContainer = document.createElement("div"); adminContainer.id = "adminContainer"; adminContainer.style.textAlign = "center"; adminContainer.style.marginTop = "28px";
+            adminContainer.innerHTML = `<button type="button" id="openAddProduct" class="manage-products-btn">＋ إضافة منتج جديد</button><button type="button" id="openProductManager" class="manage-products-btn" style="margin:6px">إدارة مقاسات وألوان المنتجات</button><button type="button" id="openBookings" class="manage-products-btn">قائمة الحجوزات</button>`;
+            productsGrid.after(adminContainer);
+            document.getElementById("openProductManager").addEventListener("click", openProductManager);
+            document.getElementById("openAddProduct").addEventListener("click", openProductManager);
+            document.getElementById("openBookings").addEventListener("click", function() {
+                bookingListBody.innerHTML = `<p class="option-hint">أدخل الرمز لعرض الحجوزات.</p><label for="bookingCodeInput">رمز الدخول</label><input id="bookingCodeInput" type="password" inputmode="numeric" autocomplete="off"><button type="button" class="options-add" id="unlockBookings" style="margin-top:12px">عرض</button>`;
+                optionsOverlay.classList.add("active"); bookingListPanel.classList.add("active"); document.body.style.overflow = "hidden";
+                document.getElementById("unlockBookings").addEventListener("click", function() { if (document.getElementById("bookingCodeInput").value !== "123456") { showToast("الرمز غير صحيح"); return; } renderBookings(); });
+            });
+        }
+        showToast("تم تفعيل لوحة الإدارة");
+    }
+});
+
+const menuBtn = document.getElementById("menuBtn"); const navLinks = document.getElementById("navLinks");
+menuBtn.addEventListener("click", function() { navLinks.classList.toggle("active"); });
+document.querySelectorAll(".nav-links a").forEach(link => { link.addEventListener("click", function() { navLinks.classList.remove("active"); }); });
+
+window.addEventListener("load", function() { setTimeout(() => { document.getElementById("loader").classList.add("hidden"); }, 500); });
+const revealObserver = new IntersectionObserver(entries => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add("visible"); revealObserver.unobserve(entry.target); } }); }, { threshold: 0.12 });
+document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
+
+renderProducts(); renderCart(); updateCartCount();
+</script>
 </body>
 </html>
