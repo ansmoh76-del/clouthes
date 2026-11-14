@@ -33,10 +33,7 @@ img { max-width: 100%; display: block; }
    CONTAINER
 ========================================= */
 .container { width: min(1180px, 92%); margin: auto; }
-/* =========================================
-   HIDDEN ADMIN BUTTON
-========================================= */
-.admin-btn { display: none; }
+
 /* =========================================
    NAVBAR
 ========================================= */
@@ -101,9 +98,6 @@ section { padding: 95px 0; }
 .price { color: var(--gold); font-weight: 800; font-size: 18px; }
 .add-cart { background: var(--dark); color: white; border: 0; padding: 10px 14px; border-radius: 7px; font-weight: 700; transition: .3s; }
 .add-cart:hover { background: var(--gold); color: var(--dark); }
-
-/* HIDDEN ADMIN BUTTON */
-.admin-btn { display: none; }
 
 /* =========================================
    ABOUT
@@ -302,68 +296,10 @@ footer strong { color: var(--gold); }
                 <h2>منتجات مختارة بعناية</h2>
                 <p>اختيارات عصرية تناسب مختلف الأذواق</p>
             </div>
-            <div class="products-grid">
-                <!-- PRODUCT 1 -->
-                <article class="product-card reveal">
-                    <div class="product-image"><img src="https://images.unsplash.com/photo-1506629905607-d9a8c7a4a4c1?auto=format&fit=crop&w=800&q=80" alt="سروال كلاسيك"></div>
-                    <div class="product-info">
-                        <h3>سروال كلاسيك</h3>
-                        <p>تصميم أنيق ومريح للاستخدام اليومي والمناسبات.</p>
-                        <div class="product-bottom"><span class="price">3500 دج</span><button class="add-cart" data-id="classic-pants" data-name="سروال كلاسيك" data-price="3500" data-image="https://images.unsplash.com/photo-1506629905607-d9a8c7a4a4c1?auto=format&fit=crop&w=800&q=80">أضف للسلة</button></div>
-                    </div>
-                </article>
-                <!-- PRODUCT 2 -->
-                <article class="product-card reveal">
-                    <div class="product-image"><img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80" alt="قميص أوفرسايز"></div>
-                    <div class="product-info">
-                        <h3>قميص أوفرسايز</h3>
-                        <p>ستايل عصري بقصة واسعة ومريحة.</p>
-                        <div class="product-bottom"><span class="price">2800 دج</span><button class="add-cart" data-id="oversize-shirt" data-name="قميص أوفرسايز" data-price="2800" data-image="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80">أضف للسلة</button></div>
-                    </div>
-                </article>
-                <!-- PRODUCT 3 -->
-                <article class="product-card reveal">
-                    <div class="product-image"><img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=800&q=80" alt="جاكيت شتوي"></div>
-                    <div class="product-info">
-                        <h3>جاكيت شتوي</h3>
-                        <p>دفء وأناقة في قطعة واحدة.</p>
-                        <div class="product-bottom"><span class="price">7500 دج</span><button class="add-cart" data-id="winter-jacket" data-name="جاكيت شتوي" data-price="7500" data-image="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=800&q=80">أضف للسلة</button></div>
-                    </div>
-                </article>
-                <!-- PRODUCT 4 -->
-                <article class="product-card reveal">
-                    <div class="product-image"><img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&fit=crop&w=800&q=80" alt="قميص كلاسيك"></div>
-                    <div class="product-info">
-                        <h3>قميص كلاسيك</h3>
-                        <p>تصميم راقٍ يناسب الإطلالات الرسمية والكاجوال.</p>
-                        <div class="product-bottom"><span class="price">3200 دج</span><button class="add-cart" data-id="classic-shirt" data-name="قميص كلاسيك" data-price="3200" data-image="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&fit=crop&w=800&q=80">أضف للسلة</button></div>
-                    </div>
-                </article>
-                <!-- PRODUCT 5 -->
-                <article class="product-card reveal">
-                    <div class="product-image"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80" alt="حذاء رياضي"></div>
-                    <div class="product-info">
-                        <h3>حذاء رياضي</h3>
-                        <p>راحة وأناقة لإكمال إطلالتك اليومية.</p>
-                        <div class="product-bottom"><span class="price">6500 دج</span><button class="add-cart" data-id="sport-shoes" data-name="حذاء رياضي" data-price="6500" data-image="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80">أضف للسلة</button></div>
-                    </div>
-                </article>
-                <!-- PRODUCT 6 -->
-                <article class="product-card reveal">
-                    <div class="product-image"><img src="https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&w=800&q=80" alt="قبعة عصرية"></div>
-                    <div class="product-info">
-                        <h3>قبعة عصرية</h3>
-                        <p>لمسة بسيطة تكمل ستايلك.</p>
-                        <div class="product-bottom"><span class="price">1800 دج</span><button class="add-cart" data-id="modern-cap" data-name="قبعة عصرية" data-price="1800" data-image="https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&w=800&q=80">أضف للسلة</button></div>
-                    </div>
-                </article>
+            <div class="products-grid" id="productsGrid">
+                <!-- سيتم حقن المنتجات هنا بواسطة JavaScript -->
             </div>
-            <!-- ADMIN BUTTONS (HIDDEN) -->
-            <div class="admin-btn">
-                <button type="button" id="openAddProduct">＋ إضافة منتج جديد</button>
-                <button type="button" id="openProductManager">إدارة مقاسات وألوان المنتجات</button>
-                <button type="button" id="openBookings">قائمة الحجوزات</button>
-            </div>
+            <!-- سيتم حقن أزرار الإدارة هنا بواسطة JavaScript -->
         </div>
     </section>
 
@@ -408,7 +344,11 @@ footer strong { color: var(--gold); }
             <div class="section-heading reveal">
                 <span>آراء العملاء</span>
                 <h2>ماذا يقول عملاؤنا؟</h2>
-                <p>قريباً: آراء أول عملائنا</p>
+            </div>
+            <div class="reviews-grid">
+                <div class="review reveal"><div class="stars">★★★★★</div><p>نوعية الملابس جيدة و أصلية.</p><strong>— زبون أوس ستايل</strong></div>
+                <div class="review reveal"><div class="stars">★★★★★</div><p>تنوع الأوفرسايز رائع، وأنا أعلم أن هذا المتجر له مستقبل زاهر إن شاء الله.</p><strong>— عميلة أوس ستايل</strong></div>
+                <div class="review reveal"><div class="stars">★★★★★</div><p>نعم الأخلاق والمعاملة، بالتوفيق.</p><strong>— زبون أوس ستايل</strong></div>
             </div>
         </div>
     </section>
@@ -425,6 +365,7 @@ footer strong { color: var(--gold); }
                 <div class="contact-info reveal">
                     <h3>معلومات المتجر</h3>
                     <div class="contact-item"><strong>📍 العنوان</strong><span>تلمسان، الجزائر</span></div>
+                    <div class="contact-item"><strong>📞 الهاتف</strong><span>+213 6 61 24 71 86</span></div>
                     <div class="contact-item"><strong>🕐 أوقات العمل</strong><span>يوميًا من 09:00 إلى 20:00</span></div>
                 </div>
                 <div class="map reveal">
@@ -477,7 +418,6 @@ footer strong { color: var(--gold); }
             </select>
             <div class="manager-card" style="margin-top:18px"><strong>ملخص الطلب</strong><p id="customerOrderSummary" style="margin-top:8px;line-height:1.8"></p></div>
             <button class="options-add" type="submit">تأكيد معلومات الطلب</button>
-            <p class="option-hint">سيتم تأكيد طلبك عبر واتساب.</p>
         </form>
     </div>
 </aside>
@@ -521,27 +461,80 @@ const cartCountElement = document.getElementById("cartCount");
 const cartTotalElement = document.getElementById("cartTotal");
 const checkoutBtn = document.getElementById("checkoutBtn");
 const toast = document.getElementById("toast");
+const productsGrid = document.getElementById("productsGrid");
 
 /* =========================================
-   CART STORAGE
+   PRODUCT DATA (STATIC DEFAULTS)
+========================================= */
+const staticProducts = [
+    { id: "classic-pants", name: "سروال كلاسيك", description: "تصميم أنيق ومريح للاستخدام اليومي والمناسبات.", price: 3500, image: "https://images.unsplash.com/photo-1506629905607-d9a8c7a4a4c1?auto=format&fit=crop&w=800&q=80", sizes: ["S","M","L","XL","XXL"], colors: ["أسود","أزرق"] },
+    { id: "oversize-shirt", name: "قميص أوفرسايز", description: "ستايل عصري بقصة واسعة ومريحة.", price: 2800, image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80", sizes: ["S","M","L","XL","XXL"], colors: ["أبيض","أسود"] },
+    { id: "winter-jacket", name: "جاكيت شتوي", description: "دفء وأناقة في قطعة واحدة.", price: 7500, image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=800&q=80", sizes: ["S","M","L","XL","XXL"], colors: ["أسود","بني"] },
+    { id: "classic-shirt", name: "قميص كلاسيك", description: "تصميم راقٍ يناسب الإطلالات الرسمية والكاجوال.", price: 3200, image: "https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&fit=crop&w=800&q=80", sizes: ["S","M","L","XL","XXL"], colors: ["أبيض","أزرق"] },
+    { id: "sport-shoes", name: "حذاء رياضي", description: "راحة وأناقة لإكمال إطلالتك اليومية.", price: 6500, image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80", sizes: ["38","39","40","41","42","43","44"], colors: ["أحمر","أسود"] },
+    { id: "modern-cap", name: "قبعة عصرية", description: "لمسة بسيطة تكمل ستايلك.", price: 1800, image: "https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&w=800&q=80", sizes: [], colors: ["أصفر","أسود"] }
+];
+
+/* =========================================
+   STATE & STORAGE
 ========================================= */
 let cart = JSON.parse(localStorage.getItem(cartKey)) || [];
+let productSettings = {};
+try { productSettings = JSON.parse(localStorage.getItem("oussStyleProductOptions") || "{}") || {}; } catch (_) { productSettings = {}; }
+let customProducts = [];
+try { customProducts = JSON.parse(localStorage.getItem("oussStyleCustomProducts") || "[]") || []; } catch (_) { customProducts = []; }
+
 function saveCart() { localStorage.setItem(cartKey, JSON.stringify(cart)); }
+function saveProductSettings() { localStorage.setItem("oussStyleProductOptions", JSON.stringify(productSettings)); }
+function saveCustomProducts() { localStorage.setItem("oussStyleCustomProducts", JSON.stringify(customProducts)); }
+
+/* =========================================
+   HELPERS
+========================================= */
 function formatPrice(price) { return Number(price).toLocaleString("fr-DZ") + " دج"; }
+function escapeHTML(value) { return String(value).replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch])); }
 function getTotalItems() { return cart.reduce((total, item) => total + item.quantity, 0); }
 function getTotalPrice() { return cart.reduce((total, item) => total + (item.price * item.quantity), 0); }
 
-function updateCartCount() {
-    const totalItems = getTotalItems();
-    cartCountElement.textContent = totalItems;
-    cartCountElement.style.display = totalItems === 0 ? "none" : "flex";
+function getProductSettings(product) {
+    const saved = productSettings[product.id] || {};
+    const sizes = Array.isArray(saved.sizes) ? saved.sizes : (product.sizes || []);
+    const colors = Array.isArray(saved.colors) && saved.colors.length ? saved.colors : (product.colors || []);
+    return { ...product, sizes, colors };
 }
 
+/* =========================================
+   TOAST
+========================================= */
 function showToast(message) {
     toast.textContent = message;
     toast.classList.add("show");
     clearTimeout(window.toastTimer);
     window.toastTimer = setTimeout(() => { toast.classList.remove("show"); }, 2500);
+}
+
+/* =========================================
+   RENDER PRODUCTS
+========================================= */
+function renderProducts() {
+    productsGrid.innerHTML = "";
+    const allProducts = [...staticProducts, ...customProducts];
+    allProducts.forEach(product => {
+        const card = document.createElement("article");
+        card.className = "product-card reveal visible";
+        card.innerHTML = `<div class="product-image"><img src="${escapeHTML(product.image)}" alt="${escapeHTML(product.name)}" loading="lazy"></div><div class="product-info"><h3>${escapeHTML(product.name)}</h3><p>${escapeHTML(product.description || "")}</p><div class="product-bottom"><span class="price">${formatPrice(product.price)}</span><button class="add-cart" data-id="${escapeHTML(product.id)}">أضف للسلة</button></div></div>`;
+        productsGrid.appendChild(card);
+        card.querySelector(".add-cart").addEventListener("click", () => openOptions(product));
+    });
+}
+
+/* =========================================
+   CART
+========================================= */
+function updateCartCount() {
+    const totalItems = getTotalItems();
+    cartCountElement.textContent = totalItems;
+    cartCountElement.style.display = totalItems === 0 ? "none" : "flex";
 }
 
 function addToCart(product) {
@@ -598,7 +591,7 @@ cartItemsContainer.addEventListener("click", function(event) {
 });
 
 /* =========================================
-   PRODUCT OPTIONS + CUSTOM PER-PRODUCT SETTINGS
+   OPTIONS PANELS
 ========================================= */
 const optionsOverlay = document.getElementById("optionsOverlay");
 const productOptionsPanel = document.getElementById("productOptionsPanel");
@@ -610,29 +603,9 @@ const customerInfoForm = document.getElementById("customerInfoForm");
 const bookingListPanel = document.getElementById("bookingListPanel");
 const bookingListBody = document.getElementById("bookingListBody");
 const productManagerBody = document.getElementById("productManagerBody");
-const productSettingsKey = "oussStyleProductOptions";
 let activeProduct = null;
 let selectedSize = "";
 let selectedColor = "";
-
-let productDefaults = Array.from(document.querySelectorAll(".add-cart")).map(button => {
-    const name = button.dataset.name;
-    const isShoe = /حذاء|حذاء رياضي|صباط/.test(name);
-    const hasSize = /سروال|قميص|جاكيت|حذاء|صباط/.test(name) || isShoe;
-    return { id: button.dataset.id, name, price: Number(button.dataset.price), image: button.dataset.image, sizes: isShoe ? ["38","39","40","41","42","43","44"] : (hasSize ? ["S","M","L","XL","XXL"] : []), colors: ["أسود","أبيض","أزرق"] };
-});
-
-let productSettings = {};
-try { productSettings = JSON.parse(localStorage.getItem(productSettingsKey) || "{}") || {}; } catch (_) { productSettings = {}; }
-
-function getProductSettings(product) {
-    const saved = productSettings[product.id] || {};
-    const sizes = Array.isArray(saved.sizes) ? saved.sizes : product.sizes;
-    const colors = Array.isArray(saved.colors) && saved.colors.length ? saved.colors : product.colors;
-    return { ...product, sizes, colors };
-}
-
-function saveProductSettings() { localStorage.setItem(productSettingsKey, JSON.stringify(productSettings)); }
 
 function closeOptionPanels() {
     productOptionsPanel.classList.remove("active");
@@ -666,13 +639,30 @@ function openOptions(product) {
     document.body.style.overflow = "hidden";
 }
 
-function escapeHTML(value) { return String(value).replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch])); }
-
+/* =========================================
+   PRODUCT MANAGER & ADMIN
+========================================= */
 function openProductManager() {
-    productManagerBody.innerHTML = productDefaults.map(product => {
-        const item = getProductSettings(product);
-        return `<section class="manager-card" data-product-id="${product.id}"><h3>${product.name}</h3><small>${formatPrice(product.price)}</small><label>المقاسات المتاحة (افصل بينها بفاصلة)</label><input class="manager-sizes" value="${item.sizes.join(", ")}" placeholder="مثال: S, M, L أو 38, 39, 40"><label>الألوان المتاحة (افصل بينها بفاصلة)</label><input class="manager-colors" value="${item.colors.join(", ")}" placeholder="مثال: أسود, أبيض, أزرق"></section>`;
-    }).join("") + `<button type="button" class="manager-save" id="saveProductSettings">حفظ خيارات المنتجات</button><p class="option-hint">الحفظ محلي في هذا المتصفح وعلى هذا الجهاز، ولا يغيّر موقعًا منشورًا أو أجهزة أخرى.</p>`;
+    const allProducts = [...staticProducts, ...customProducts];
+    productManagerBody.innerHTML = `<form id="addProductForm" class="manager-add-form"><h3>إضافة منتج جديد</h3><label for="newProductName">اسم المنتج</label><input id="newProductName" required maxlength="80" placeholder="مثال: جاكيت شتوي"><label for="newProductPrice">السعر بالدينار الجزائري</label><input id="newProductPrice" type="number" min="1" step="1" required placeholder="مثال: 4500"><label for="newProductImage">رابط صورة المنتج</label><input id="newProductImage" type="url" required placeholder="https://..."><label for="newProductDescription">وصف المنتج</label><input id="newProductDescription" maxlength="180" placeholder="وصف قصير للمنتج"><label for="newProductSizes">المقاسات (افصل بينها بفاصلة)</label><input id="newProductSizes" placeholder="مثال: S, M, L, XL"><label for="newProductColors">الألوان (افصل بينها بفاصلة)</label><input id="newProductColors" required placeholder="مثال: أسود, أبيض, أزرق"><button type="submit" class="manager-save">حفظ وإضافة المنتج</button></form><h3 style="margin:20px 0 10px">تخصيص المقاسات والألوان</h3>` + allProducts.map(product => { const item = getProductSettings(product); return `<section class="manager-card" data-product-id="${escapeHTML(product.id)}"><h3>${escapeHTML(product.name)}</h3><small>${formatPrice(product.price)}</small><label>المقاسات المتاحة (افصل بينها بفاصلة)</label><input class="manager-sizes" value="${escapeHTML(item.sizes.join(", "))}" placeholder="مثال: S, M, L أو 38, 39, 40"><label>الألوان المتاحة (افصل بينها بفاصلة)</label><input class="manager-colors" value="${escapeHTML(item.colors.join(", "))}" placeholder="مثال: أسود, أبيض, أزرق"></section>`; }).join("") + `<button type="button" class="manager-save" id="saveProductSettings">حفظ خيارات المنتجات</button><p class="option-hint">الحفظ محلي في هذا المتصفح وعلى هذا الجهاز، ولا يغيّر موقعًا منشورًا أو أجهزة أخرى.</p>`;
+    
+    document.getElementById("addProductForm").addEventListener("submit", event => {
+        event.preventDefault();
+        const name = document.getElementById("newProductName").value.trim();
+        const price = Number(document.getElementById("newProductPrice").value);
+        const image = document.getElementById("newProductImage").value.trim();
+        const description = document.getElementById("newProductDescription").value.trim();
+        const sizes = document.getElementById("newProductSizes").value.split(",").map(x => x.trim()).filter(Boolean);
+        const colors = document.getElementById("newProductColors").value.split(",").map(x => x.trim()).filter(Boolean);
+        if (!name || !Number.isFinite(price) || price <= 0 || !image || !colors.length) { showToast("أكمل اسم المنتج والسعر والصورة ولونًا واحدًا على الأقل"); return; }
+        const product = { id: "custom-" + Date.now(), name, description, price, image, sizes, colors };
+        customProducts.push(product);
+        saveCustomProducts();
+        renderProducts();
+        showToast("تمت إضافة المنتج بنجاح");
+        openProductManager();
+    });
+
     document.getElementById("saveProductSettings").addEventListener("click", () => {
         const updated = {}; let valid = true;
         productManagerBody.querySelectorAll(".manager-card").forEach(card => {
@@ -687,25 +677,20 @@ function openProductManager() {
         showToast("تم حفظ خيارات المنتجات");
         closeOptionPanels();
     });
+
     optionsOverlay.classList.add("active");
     productManagerPanel.classList.add("active");
     document.body.style.overflow = "hidden";
 }
 
-document.querySelectorAll(".add-cart").forEach(button => button.addEventListener("click", () => {
-    const product = productDefaults.find(item => item.id === button.dataset.id);
-    if (product) openOptions(product);
-}));
-
-document.getElementById("openProductManager").addEventListener("click", openProductManager);
-document.getElementById("openAddProduct").addEventListener("click", openProductManager);
 document.getElementById("closeOptions").addEventListener("click", closeOptionPanels);
 document.getElementById("closeProductManager").addEventListener("click", closeOptionPanels);
 document.getElementById("closeCustomerInfo").addEventListener("click", closeOptionPanels);
+document.getElementById("closeBookings").addEventListener("click", closeOptionPanels);
 optionsOverlay.addEventListener("click", closeOptionPanels);
 
 /* =========================================
-   OPEN CART
+   CART UI
 ========================================= */
 function openCart() {
     renderCart();
@@ -730,7 +715,7 @@ document.addEventListener("keydown", function(event) {
 });
 
 /* =========================================
-   CUSTOMER INFO CHECKOUT (WHATSAPP)
+   CHECKOUT (WHATSAPP)
 ========================================= */
 checkoutBtn.addEventListener("click", function() {
     if (cart.length === 0) return;
@@ -752,8 +737,6 @@ customerInfoForm.addEventListener("submit", function(event) {
     const order = {
         orderNumber: "OS-" + Date.now().toString().slice(-8),
         customer: {
-            firstName: String(formData.get("firstName")).trim(),
-            lastName: String(formData.get("lastName")).trim(),
             name: `${String(formData.get("firstName")).trim()} ${String(formData.get("lastName")).trim()}`,
             phone: String(formData.get("phone")).trim(),
             wilaya: String(formData.get("wilaya")).trim(),
@@ -761,10 +744,9 @@ customerInfoForm.addEventListener("submit", function(event) {
             address: String(formData.get("address")).trim(),
             deliveryType: String(formData.get("deliveryType"))
         },
-        items: cart.map(item => ({ id: item.id, name: item.name, price: item.price, quantity: item.quantity, size: item.size || "", color: item.color || "" })),
+        items: cart.map(item => ({ name: item.name, price: item.price, quantity: item.quantity, size: item.size || "", color: item.color || "" })),
         total: getTotalPrice(),
-        createdAt: new Date().toISOString(),
-        status: "محفوظ محليًا - لم يُرسل إلى المتجر"
+        createdAt: new Date().toISOString()
     };
     let orders = [];
     try {
@@ -772,10 +754,8 @@ customerInfoForm.addEventListener("submit", function(event) {
         if (!Array.isArray(orders)) orders = [];
         orders.push(order);
         localStorage.setItem("oussStyleOrders", JSON.stringify(orders));
-    } catch (error) {
-        showToast("تعذر حفظ الطلب في هذا المتصفح");
-        return;
-    }
+    } catch (error) {}
+    
     const phoneNumber = "213661247186";
     let message = `🛍️ *طلب جديد - أوس ستايل*\n\n`;
     message += `📋 رقم الطلب: ${order.orderNumber}\n`;
@@ -788,14 +768,16 @@ customerInfoForm.addEventListener("submit", function(event) {
     message += `📦 *المنتجات:*\n`;
     order.items.forEach(it => { message += `• ${it.name} (${it.size} / ${it.color}) × ${it.quantity} = ${formatPrice(it.price * it.quantity)}\n`; });
     message += `\n💰 *الإجمالي: ${formatPrice(order.total)}*`;
+    
     window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
+    
     cart = [];
     saveCart();
     renderCart();
     updateCartCount();
     customerInfoForm.reset();
     closeOptionPanels();
-    showToast("تم حفظ الطلب. يمكنك متابعة التأكيد عبر واتساب.");
+    showToast("تم إرسال الطلب إلى واتساب");
 });
 
 /* =========================================
@@ -816,7 +798,7 @@ function renderBookings() {
 }
 
 /* =========================================
-   SECRET LOGO (5 CLICKS)
+   SECRET ADMIN ACCESS (INJECTED BUTTONS)
 ========================================= */
 let logoClicks = 0;
 let logoTimer = null;
@@ -827,25 +809,30 @@ document.getElementById("secretLogo").addEventListener("click", function(e) {
     logoTimer = setTimeout(() => { logoClicks = 0; }, 1500);
     if (logoClicks >= 5) {
         logoClicks = 0;
-        document.querySelector(".admin-btn").style.display = "block";
+        if (!document.getElementById("adminContainer")) {
+            const adminContainer = document.createElement("div");
+            adminContainer.id = "adminContainer";
+            adminContainer.style.textAlign = "center";
+            adminContainer.style.marginTop = "28px";
+            adminContainer.innerHTML = `<button type="button" id="openAddProduct" class="manage-products-btn">＋ إضافة منتج جديد</button><button type="button" id="openProductManager" class="manage-products-btn" style="margin:6px">إدارة مقاسات وألوان المنتجات</button><button type="button" id="openBookings" class="manage-products-btn">قائمة الحجوزات</button>`;
+            productsGrid.after(adminContainer);
+            
+            document.getElementById("openProductManager").addEventListener("click", openProductManager);
+            document.getElementById("openAddProduct").addEventListener("click", openProductManager);
+            document.getElementById("openBookings").addEventListener("click", function() {
+                bookingListBody.innerHTML = `<p class="option-hint">أدخل الرمز لعرض الحجوزات المحفوظة على هذا الجهاز.</p><label for="bookingCodeInput">رمز الدخول</label><input id="bookingCodeInput" type="password" inputmode="numeric" autocomplete="off" placeholder="أدخل الرمز"><button type="button" class="options-add" id="unlockBookings" style="margin-top:12px">عرض الحجوزات</button><p class="option-hint">ملاحظة: الرمز تجريبي وليس تشفيرًا أو حماية حقيقية.</p>`;
+                optionsOverlay.classList.add("active");
+                bookingListPanel.classList.add("active");
+                document.body.style.overflow = "hidden";
+                document.getElementById("unlockBookings").addEventListener("click", function() {
+                    if (document.getElementById("bookingCodeInput").value !== "123456") { showToast("الرمز غير صحيح"); return; }
+                    renderBookings();
+                });
+            });
+        }
         showToast("تم تفعيل لوحة الإدارة");
     }
 });
-
-document.getElementById("openBookings").addEventListener("click", function() {
-    bookingListBody.innerHTML = `<p class="option-hint">أدخل الرمز لعرض الحجوزات المحفوظة على هذا الجهاز.</p><label for="bookingCodeInput">رمز الدخول</label><input id="bookingCodeInput" type="password" inputmode="numeric" autocomplete="off" placeholder="أدخل الرمز"><button type="button" class="options-add" id="unlockBookings" style="margin-top:12px">عرض الحجوزات</button><p class="option-hint">ملاحظة: الرمز تجريبي وليس تشفيرًا أو حماية حقيقية.</p>`;
-    optionsOverlay.classList.add("active");
-    bookingListPanel.classList.add("active");
-    document.body.style.overflow = "hidden";
-    document.getElementById("unlockBookings").addEventListener("click", function() {
-        if (document.getElementById("bookingCodeInput").value !== "123456") { showToast("الرمز غير صحيح"); return; }
-        renderBookings();
-    });
-    document.getElementById("bookingCodeInput").addEventListener("keydown", function(event) {
-        if (event.key === "Enter") { event.preventDefault(); document.getElementById("unlockBookings").click(); }
-    });
-});
-document.getElementById("closeBookings").addEventListener("click", closeOptionPanels);
 
 /* =========================================
    MOBILE MENU
@@ -858,16 +845,12 @@ document.querySelectorAll(".nav-links a").forEach(link => {
 });
 
 /* =========================================
-   LOADER
+   LOADER & REVEAL
 ========================================= */
 window.addEventListener("load", function() {
     setTimeout(() => { document.getElementById("loader").classList.add("hidden"); }, 500);
 });
 
-/* =========================================
-   SCROLL REVEAL
-========================================= */
-const revealElements = document.querySelectorAll(".reveal");
 const revealObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -876,11 +859,12 @@ const revealObserver = new IntersectionObserver(entries => {
         }
     });
 }, { threshold: 0.12 });
-revealElements.forEach(element => { revealObserver.observe(element); });
+document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
 
 /* =========================================
-   INITIAL CART LOAD
+   INIT
 ========================================= */
+renderProducts();
 renderCart();
 updateCartCount();
 </script>
