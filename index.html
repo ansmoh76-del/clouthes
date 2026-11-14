@@ -405,11 +405,7 @@ footer strong { color: var(--gold); }
             <div class="section-heading reveal">
                 <span>آراء العملاء</span>
                 <h2>ماذا يقول عملاؤنا؟</h2>
-            </div>
-            <div class="reviews-grid">
-                <div class="review reveal"><div class="stars">★★★★★</div><p>نوعية الملابس جيدة و أصلية.</p><strong>— زبون أوس ستايل</strong></div>
-                <div class="review reveal"><div class="stars">★★★★★</div><p>تنوع الأوفرسايز رائع، وأنا أعلم أن هذا المتجر له مستقبل زاهر إن شاء الله.</p><strong>— عميلة أوس ستايل</strong></div>
-                <div class="review reveal"><div class="stars">★★★★★</div><p>نعم الأخلاق والمعاملة، بالتوفيق.</p><strong>— زبون أوس ستايل</strong></div>
+                <p>قريباً: آراء أول عملائنا</p>
             </div>
         </div>
     </section>
@@ -426,7 +422,6 @@ footer strong { color: var(--gold); }
                 <div class="contact-info reveal">
                     <h3>معلومات المتجر</h3>
                     <div class="contact-item"><strong>📍 العنوان</strong><span>تلمسان، الجزائر</span></div>
-                    <div class="contact-item"><strong>📞 الهاتف</strong><span>+213 6 61 24 71 86</span></div>
                     <div class="contact-item"><strong>🕐 أوقات العمل</strong><span>يوميًا من 09:00 إلى 20:00</span></div>
                 </div>
                 <div class="map reveal">
@@ -479,7 +474,7 @@ footer strong { color: var(--gold); }
             </select>
             <div class="manager-card" style="margin-top:18px"><strong>ملخص الطلب</strong><p id="customerOrderSummary" style="margin-top:8px;line-height:1.8"></p></div>
             <button class="options-add" type="submit">تأكيد معلومات الطلب</button>
-            <p class="option-hint">تنبيه: هذه النسخة التجريبية تحفظ الطلب على هذا الجهاز فقط، ولا ترسله تلقائيًا إلى المتجر.</p>
+            <p class="option-hint">سيتم تأكيد طلبك عبر واتساب.</p>
         </form>
     </div>
 </aside>
@@ -797,7 +792,7 @@ customerInfoForm.addEventListener("submit", function(event) {
     updateCartCount();
     customerInfoForm.reset();
     closeOptionPanels();
-    showToast("تم ملء المعلومات بنجاح");
+    showToast("تم حفظ الطلب. يمكنك متابعة التأكيد عبر واتساب.");
 });
 
 /* =========================================
