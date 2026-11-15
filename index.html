@@ -11,15 +11,16 @@
         font-family: 'Cairo', sans-serif;
         background: #111;
         color: #fff;
-        min-height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
+        line-height: 1.7;
     }
     .container {
-        padding: 20px;
-        max-width: 600px;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 40px 20px;
+    }
+    .header {
+        text-align: center;
+        margin-bottom: 50px;
     }
     .avatar {
         width: 120px;
@@ -43,13 +44,14 @@
         font-size: 1.2rem;
         color: #ccc;
         font-weight: 400;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
-    p {
+    .bio {
         color: #aaa;
-        line-height: 1.8;
-        margin-bottom: 30px;
+        max-width: 600px;
+        margin: 0 auto 30px;
         font-size: 1.1rem;
+        text-align: center;
     }
     .btn {
         display: inline-block;
@@ -66,15 +68,71 @@
         background: #e5c85b;
         transform: translateY(-3px);
     }
+    .section-title {
+        text-align: center;
+        font-size: 2rem;
+        color: #d4af37;
+        margin: 60px 0 30px;
+    }
+    .work-card {
+        background: #222;
+        border-radius: 15px;
+        overflow: hidden;
+        margin-bottom: 30px;
+        border: 1px solid #333;
+        transition: 0.3s;
+    }
+    .work-card:hover {
+        border-color: #d4af37;
+        transform: translateY(-5px);
+    }
+    .work-image img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+    .work-info {
+        padding: 20px;
+    }
+    .work-info h3 {
+        font-size: 1.5rem;
+        color: #d4af37;
+        margin-bottom: 10px;
+    }
+    .work-info p {
+        color: #aaa;
+    }
 </style>
 </head>
 <body>
     <div class="container">
-        <div class="avatar">ع</div>
-        <h1>عبد النور</h1>
-        <h2>مصمم مواقع إلكترونية</h2>
-        <p>أصنع مواقع عصرية للمحلات والشركات في الجزائر. تصميم احترافي، سلة تسوق، وربط واتساب.</p>
-        <a href="https://www.instagram.com/abdennour.dev.11" class="btn" target="_blank">تواصل معي على إنستغرام</a>
+        <div class="header">
+            <div class="avatar">ع</div>
+            <h1>عبد النور</h1>
+            <h2>مصمم مواقع إلكترونية</h2>
+            <p class="bio">أصنع مواقع عصرية للمحلات والشركات في الجزائر. تصميم احترافي، سلة تسوق، وربط واتساب.</p>
+            <a href="https://www.instagram.com/abdennour.dev.11" class="btn" target="_blank">تواصل معي على إنستغرام</a>
+        </div>
+
+        <h2 class="section-title">أعمالي</h2>
+        <div class="work-card">
+            <div class="work-image">
+                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80" alt="إيمن فاست فود">
+            </div>
+            <div class="work-info">
+                <h3>إيمن فاست فود</h3>
+                <p>موقع وجبات سريعة مع سلة تسوق وربط واتساب.</p>
+            </div>
+        </div>
+       <div class="work-card">
+    <div class="work-image">
+        <img src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?auto=format&fit=crop&w=800&q=80" alt="أوس ستايل">
+    </div>
+    <div class="work-info">
+        <h3>أوس ستايل</h3>
+        <p>متجر ملابس عصرية مع كتالوغ منتجات.</p>
+    </div>
+</div>
     </div>
 </body>
 </html>
